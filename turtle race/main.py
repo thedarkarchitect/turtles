@@ -18,7 +18,7 @@ all_racers = []
 
 #Create 6 turtles
 for racer_index in range(0, 6):
-    racers = Turtle(shape="turtle")
+    racers = Turtle(shape="turtle")#this is the turtle instance that creates more turtles depending on the range
     racers.penup()
     racers.color(colors[racer_index])
     #this position the racers and the x will will be the start line and the y will vary according the index of racer and set position
