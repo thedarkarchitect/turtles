@@ -1,0 +1,32 @@
+from turtle import Screen, Turtle
+from snake import Snake
+import time
+
+screen = Screen()
+screen.setup(width=600, height=600)
+screen.bgcolor("black")
+screen.title("Snake xEnzia")
+screen.tracer(0)
+
+snake = Snake()
+screen.listen()
+screen.onkey(snake.up, "Up")
+screen.onkey(snake.down, "Down")
+screen.onkey(snake.left, "Left")
+screen.onkey(snake.right, "Right")
+
+game_on = True
+
+while game_on:
+    screen.update()#this stops the animation from spliting while it travel across the screen by refreshing the screen every 0.1 seconds using the sleep function
+    time.sleep(0.1)
+
+    snake.move()
+    
+
+
+
+
+
+
+screen.exitonclick()
