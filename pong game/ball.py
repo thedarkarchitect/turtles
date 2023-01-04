@@ -8,6 +8,7 @@ class Ball(Turtle):
         self.penup()
         self.x_move = 10
         self.y_move = 10
+        self.ball_speed = 0.1
         
     
     def ball_move(self):
@@ -22,7 +23,9 @@ class Ball(Turtle):
 
     def bounce_x(self):
         self.x_move *= -1
+        self.ball_speed += 0.9
 
     def reset_ball(self):
         self.goto(0,0)
+        self.ball_speed = 0.1
         self.bounce_x()#this will make the ball go in the oposite because the x coordinates will be flipped on each round
