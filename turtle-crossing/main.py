@@ -16,9 +16,6 @@ car_manager = CarManager()
 screen.listen()
 screen.onkey(player.up, "Up")
 
-for i in range(20):
-    car_manager.car_generator()
-
 game_is_on = True
 
 while game_is_on:
@@ -26,18 +23,18 @@ while game_is_on:
     screen.update()
 
     #car generator
+    car_manager.create_car()
+    car_manager.move_car()
     
-
-    #turtle collides with car
 
     #turtle crosses screen
     if player.ycor() > 290:
         player.reset()
 
     #detect collision
-    if player.distance(car_manager) < 10:
-        game_is_on = False
-        scoreboard.game_over()
+    # if player.distance(car_manager) < 10:
+    #     game_is_on = False
+    #     scoreboard.game_over()
 
 
 

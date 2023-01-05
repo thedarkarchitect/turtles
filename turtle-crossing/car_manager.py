@@ -7,20 +7,18 @@ import random
 
 class CarManager():
     def __init__(self):
-        super().__init__()
-        # self.hideturtle()
-        self.penup()
-        self.shape("square")
-        self.shapesize(stretch_len=2)
-        self.car_generator()
+        self.cars = []#This will store all the cars so that we can make them move each
 
-
-    def car_generator(self):
-        new_y = random.randint(-270,270)
-        self.color(random.choice(COLORS))
-        self.goto(-280, new_y)
-        self.setheading(180)
-        self.forward(STARTING_MOVE_DISTANCE)
+    def create_car(self):
+        """make a new car """
+        car = Turtle('square')
+        car.shapesize( stretch_len=2)
+        car.penup()
+        car.color(random.choice(COLORS))
+        new_y = random.randint(-240, 250)
+        car.goto(290, new_y)
+        self.cars.append(car)
         
-    def move_faster(self):
-        pass
+    def move_car(self):
+        for car in self.cars:
+            car.backward(STARTING_MOVE_DISTANCE)
