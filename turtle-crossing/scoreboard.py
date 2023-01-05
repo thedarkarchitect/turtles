@@ -16,6 +16,7 @@ class Scoreboard(Turtle):
     
     def change_level(self):
         self.level += 1
+        self.clear()
         self.update_level()
 
     def game_over(self):

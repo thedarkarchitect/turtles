@@ -31,6 +31,7 @@ while game_is_on:
     if player.is_at_finish():
         player.reset()
         car_manager.speed_up()
+        scoreboard.change_level()
 
     #detect collision
     for car in car_manager.cars:
