@@ -11,11 +11,18 @@ class Player(Turtle):
         self.shape("turtle")
         self.penup()
         self.goto(STARTING_POSITION)
+        self.reset()
         self.setheading(90)
         
     def up(self):
         """Moves the turtle across the screen"""
         self.forward(MOVE_DISTANCE)
 
+    def is_at_finish(self):
+        if self.ycor() > FINISH_LINE_Y:
+            return True
+        else:
+            return False
+    
     def reset(self):
         self.goto(STARTING_POSITION)

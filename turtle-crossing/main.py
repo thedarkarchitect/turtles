@@ -28,13 +28,15 @@ while game_is_on:
     
 
     #turtle crosses screen
-    if player.ycor() > 290:
+    if player.is_at_finish():
         player.reset()
+        car_manager.speed_up()
 
     #detect collision
-    # if player.distance(car_manager) < 10:
-    #     game_is_on = False
-    #     scoreboard.game_over()
+    for car in car_manager.cars:
+        if car.distance(player) < 20:
+            game_is_on = False
+            scoreboard.game_over()
 
 
 
